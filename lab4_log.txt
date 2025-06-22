@@ -1,0 +1,673 @@
+Thread P1 has started
+P1 Producer tries to lock MCR1
+P1 Producer successfully locked MCR1
+P1 Producer successfully added a new element number 0 to CR1 list
+P1 Producer sent SCR1 post signal
+P1 Producer unlocked MCR1
+Thread P5 has started
+
+P5 modifies atomic variables using numbered atomic ops
+(2) int add fetch: 3
+(8) int fetch sub: 2
+(4) long xor fetch: 3
+(5) long or fetch: 7
+(10) unsigned fetch xor: 3
+(11) unsigned fetch or: 4
+(13) long unsigned compare exchange success: 0
+(14) long unsigned before exchange: 7 7
+(14) long unsigned after exchange: 7 7
+P5 Consumer tries to lock Sig21
+P5 Consumer broadcasted Sig21
+P5 Consumer unlocked Sig21
+P5 Consumer waits for SCR1 post signal
+Thread P6 has started
+P6 tries to lock Sig21
+P6 waits for Sig21
+P6 got signal Sig21
+P6 unlocked Sig21
+Thread P2 has started
+P2 tries to lock Sig21
+P2 Consumer waits for Sig21
+P2 Consumer got Sig21
+P2 unlocked Sig21
+
+P2 uses atomic variables
+ivar1 + ivar2 = 3 + -1 = 2
+uvar1 + uvar2 = 7 + 7 = 14
+lvar1 + lvar2 = 3 + 7 = 10
+luvar1 + luvar2 = 7 + 7 = 14
+
+
+P2 modifies atomic variables using numbered atomic ops
+(2) int add fetch: 2
+(8) int fetch sub: -1
+(4) long xor fetch: 4
+(5) long or fetch: 7
+(10) unsigned fetch xor: 7
+(11) unsigned fetch or: 7
+(13) long unsigned compare exchange success: 1
+(14) long unsigned before exchange: 2 7
+(14) long unsigned after exchange: 7 2
+P2 Consumer waits for SCR1 post signal
+Thread P4 has started
+P4 tries to lock Sig21
+P4 Consumer waits for Sig21 
+P4 Consumer got Sig21
+P4 Consumer unlocked Sig21
+P4 Consumer waits for SCR1 post signal
+Thread P3 has started
+P3 tries to lock Sig21
+P3 waits for Sig21
+P3 got Sig21
+P3 unlocked Sig21
+
+P3 uses atomic variables
+ivar1 + ivar2 = 2 + -3 = -1
+uvar1 + uvar2 = 0 + 7 = 7
+lvar1 + lvar2 = 4 + 7 = 11
+luvar1 + luvar2 = 7 + 2 = 9
+
+P3 waits on Barrier bcr2
+P5 Consumer got SCR1 post signal
+P5 Consumer tries to lock MCR1
+P5 Consumer successfully locked MCR1
+
+P6 uses atomic variables
+ivar1 + ivar2 = 2 + -3 = -1
+uvar1 + uvar2 = 0 + 7 = 7
+lvar1 + lvar2 = 4 + 7 = 11
+luvar1 + luvar2 = 7 + 2 = 9
+
+P6 waits on Barrier bcr2
+P6 passed through Barrier bcr2
+
+P6 modifies atomic variables using numbered atomic ops
+(2) int add fetch: -1
+(8) int fetch sub: -3
+P3 passed through Barrier bcr2
+
+P3 uses atomic variables
+(4) long xor fetch: 3
+P5 Consumer successfully took 0 from CR1 list
+ivar1 + ivar2 = -1 + -2 = -3
+(5) long or fetch: 7
+Now there is 0 elements left in CR1 list
+uvar1 + uvar2 = 0 + 7 = 7
+lvar1 + lvar2 = 3 + 7 = 10
+luvar1 + luvar2 = 7 + 2 = 9
+
+(10) unsigned fetch xor: 0
+(11) unsigned fetch or: 7
+P5 Consumer unlocked MCR1
+(13) long unsigned compare exchange success: 0
+(14) long unsigned before exchange: 7 7
+(14) long unsigned after exchange: 7 7
+P1 Producer tries to lock MCR1
+P1 Producer successfully locked MCR1
+P1 Producer successfully added a new element number 0 to CR1 list
+P1 Producer sent SCR1 post signal
+P2 Consumer got SCR1 post signal
+P2 Consumer tries to lock MCR1
+P2 Consumer successfully locked MCR1
+P1 Producer unlocked MCR1
+P2 Consumer successfully took 1 from CR1 list
+Now there is 0 elements left in CR1 list
+P2 Consumer unlocked MCR1
+
+P5 modifies atomic variables using numbered atomic ops
+(2) int add fetch: -3
+(8) int fetch sub: -2
+(4) long xor fetch: 4
+(5) long or fetch: 7
+(10) unsigned fetch xor: 7
+(11) unsigned fetch or: 7
+(13) long unsigned compare exchange success: 1
+(14) long unsigned before exchange: 5 7
+(14) long unsigned after exchange: 7 5
+P5 Consumer tries to lock Sig21
+P5 Consumer broadcasted Sig21
+P5 Consumer unlocked Sig21
+P5 Consumer waits for SCR1 post signal
+P6 tries to lock Sig21
+P6 waits for Sig21
+P6 got signal Sig21
+P6 unlocked Sig21
+
+P6 uses atomic variables
+ivar1 + ivar2 = -3 + 1 = -2
+uvar1 + uvar2 = 0 + 7 = 7
+lvar1 + lvar2 = 4 + 7 = 11
+luvar1 + luvar2 = 7 + 5 = 12
+
+P6 waits on Barrier bcr2
+P3 tries to lock Sig21
+P3 waits for Sig21
+P3 got Sig21
+P3 unlocked Sig21
+
+P3 uses atomic variables
+ivar1 + ivar2 = -3 + 1 = -2
+uvar1 + uvar2 = 0 + 7 = 7
+lvar1 + lvar2 = 4 + 7 = 11
+luvar1 + luvar2 = 7 + 5 = 12
+
+P3 waits on Barrier bcr2
+P3 passed through Barrier bcr2
+
+P3 uses atomic variables
+ivar1 + ivar2 = -3 + 1 = -2
+uvar1 + uvar2 = 0 + 7 = 7
+lvar1 + lvar2 = 4 + 7 = 11
+luvar1 + luvar2 = 7 + 5 = 12
+
+P6 passed through Barrier bcr2
+
+P6 modifies atomic variables using numbered atomic ops
+(2) int add fetch: -2
+(8) int fetch sub: 1
+(4) long xor fetch: 3
+(5) long or fetch: 7
+(10) unsigned fetch xor: 0
+(11) unsigned fetch or: 7
+(13) long unsigned compare exchange success: 0
+(14) long unsigned before exchange: 7 7
+(14) long unsigned after exchange: 7 7
+P1 Producer tries to lock MCR1
+P1 Producer successfully locked MCR1
+P1 Producer successfully added a new element number 0 to CR1 list
+P1 Producer sent SCR1 post signal
+P1 Producer unlocked MCR1
+P5 Consumer got SCR1 post signal
+P5 Consumer tries to lock MCR1
+P5 Consumer successfully locked MCR1
+P5 Consumer successfully took 2 from CR1 list
+Now there is 0 elements left in CR1 list
+P5 Consumer unlocked MCR1
+P2 tries to lock Sig21
+P2 Consumer waits for Sig21
+P2 Consumer got Sig21
+P2 unlocked Sig21
+
+P2 uses atomic variables
+ivar1 + ivar2 = -2 + 3 = 1
+uvar1 + uvar2 = 7 + 7 = 14
+lvar1 + lvar2 = 3 + 7 = 10
+luvar1 + luvar2 = 7 + 7 = 14
+
+
+P2 modifies atomic variables using numbered atomic ops
+(2) int add fetch: 1
+(8) int fetch sub: 3
+(4) long xor fetch: 4
+(5) long or fetch: 7
+(10) unsigned fetch xor: 7
+(11) unsigned fetch or: 7
+(13) long unsigned compare exchange success: 1
+(14) long unsigned before exchange: 2 7
+(14) long unsigned after exchange: 7 2
+P2 Consumer waits for SCR1 post signal
+P6 tries to lock Sig21
+P6 waits for Sig21
+P3 tries to lock Sig21
+P3 waits for Sig21
+P1 Producer tries to lock MCR1
+P1 Producer successfully locked MCR1
+
+P5 modifies atomic variables using numbered atomic ops
+(2) int add fetch: 3
+(8) int fetch sub: 2
+(4) long xor fetch: 3
+(5) long or fetch: 7
+(10) unsigned fetch xor: 0
+(11) unsigned fetch or: 7
+(13) long unsigned compare exchange success: 0
+(14) long unsigned before exchange: 7 7
+(14) long unsigned after exchange: 7 7
+P1 Producer successfully added a new element number 0 to CR1 list
+P1 Producer sent SCR1 post signal
+P4 Consumer got SCR1 post signal
+P4 Consumer tries to lock MCR1
+P4 Consumer successfully locked MCR1
+P1 Producer unlocked MCR1
+P5 Consumer tries to lock Sig21
+P5 Consumer broadcasted Sig21
+P5 Consumer unlocked Sig21
+P5 Consumer waits for SCR1 post signal
+P3 got Sig21
+P3 unlocked Sig21
+P4 Consumer successfully took 3 from CR1 list
+Now there is 0 elements left in CR1 list
+P4 Consumer unlocked MCR1
+
+P3 uses atomic variables
+ivar1 + ivar2 = 3 + -1 = 2
+uvar1 + uvar2 = 7 + 7 = 14
+lvar1 + lvar2 = 3 + 7 = 10
+luvar1 + luvar2 = 7 + 7 = 14
+
+P3 waits on Barrier bcr2
+P6 got signal Sig21
+P6 unlocked Sig21
+
+P6 uses atomic variables
+ivar1 + ivar2 = 3 + -1 = 2
+uvar1 + uvar2 = 7 + 7 = 14
+lvar1 + lvar2 = 3 + 7 = 10
+luvar1 + luvar2 = 7 + 7 = 14
+
+P6 waits on Barrier bcr2
+P6 passed through Barrier bcr2
+
+P6 modifies atomic variables using numbered atomic ops
+(2) int add fetch: 2
+(8) int fetch sub: -1
+(4) long xor fetch: 4
+P3 passed through Barrier bcr2
+
+P3 uses atomic variables
+ivar1 + ivar2 = 2 + -3 = -1
+uvar1 + uvar2 = 7 + 7 = 14
+lvar1 + lvar2 = 4 + 7 = 11
+(5) long or fetch: 7
+(10) unsigned fetch xor: 7
+(11) unsigned fetch or: 7
+luvar1 + luvar2 = 7 + 7 = 14
+
+(13) long unsigned compare exchange success: 1
+(14) long unsigned before exchange: 6 7
+(14) long unsigned after exchange: 7 6
+P4 tries to lock Sig21
+P4 Consumer waits for Sig21 
+P4 Consumer got Sig21
+P4 Consumer unlocked Sig21
+P4 Consumer waits for SCR1 post signal
+P1 Producer tries to lock MCR1
+P1 Producer successfully locked MCR1
+P1 Producer successfully added a new element number 0 to CR1 list
+P1 Producer sent SCR1 post signal
+P1 Producer unlocked MCR1
+P2 Consumer got SCR1 post signal
+P2 Consumer tries to lock MCR1
+P2 Consumer successfully locked MCR1
+P2 Consumer successfully took 4 from CR1 list
+Now there is 0 elements left in CR1 list
+P2 Consumer unlocked MCR1
+P3 tries to lock Sig21
+P3 waits for Sig21
+P6 tries to lock Sig21
+P6 waits for Sig21
+P2 tries to lock Sig21
+P2 Consumer waits for Sig21
+P2 Consumer got Sig21
+P2 unlocked Sig21
+
+P2 uses atomic variables
+ivar1 + ivar2 = 2 + -3 = -1
+uvar1 + uvar2 = 0 + 7 = 7
+lvar1 + lvar2 = 4 + 7 = 11
+luvar1 + luvar2 = 7 + 6 = 13
+
+
+P2 modifies atomic variables using numbered atomic ops
+(2) int add fetch: -1
+(8) int fetch sub: -3
+(4) long xor fetch: 3
+(5) long or fetch: 7
+(10) unsigned fetch xor: 0
+(11) unsigned fetch or: 7
+(13) long unsigned compare exchange success: 0
+(14) long unsigned before exchange: 7 7
+(14) long unsigned after exchange: 7 7
+P1 Producer tries to lock MCR1
+P1 Producer successfully locked MCR1
+P1 Producer successfully added a new element number 0 to CR1 list
+P1 Producer sent SCR1 post signal
+P1 Producer unlocked MCR1
+P2 Consumer waits for SCR1 post signal
+P4 Consumer got SCR1 post signal
+P4 Consumer tries to lock MCR1
+P4 Consumer successfully locked MCR1
+P4 Consumer successfully took 5 from CR1 list
+Now there is 0 elements left in CR1 list
+P4 Consumer unlocked MCR1
+P4 tries to lock Sig21
+P4 Consumer waits for Sig21 
+P1 Producer tries to lock MCR1
+P1 Producer successfully locked MCR1
+P1 Producer successfully added a new element number 0 to CR1 list
+P1 Producer sent SCR1 post signal
+P5 Consumer got SCR1 post signal
+P5 Consumer tries to lock MCR1
+P5 Consumer successfully locked MCR1
+P5 Consumer successfully took 6 from CR1 list
+Now there is 0 elements left in CR1 list
+P5 Consumer unlocked MCR1
+P1 Producer unlocked MCR1
+P1 Producer tries to lock MCR1
+P1 Producer successfully locked MCR1
+P1 Producer successfully added a new element number 0 to CR1 list
+P1 Producer sent SCR1 post signal
+P2 Consumer got SCR1 post signal
+P2 Consumer tries to lock MCR1
+P2 Consumer successfully locked MCR1
+P2 Consumer successfully took 7 from CR1 list
+P1 Producer unlocked MCR1
+Now there is 0 elements left in CR1 list
+P2 Consumer unlocked MCR1
+
+P5 modifies atomic variables using numbered atomic ops
+(2) int add fetch: -3
+(8) int fetch sub: -2
+(4) long xor fetch: 4
+(5) long or fetch: 7
+(10) unsigned fetch xor: 7
+(11) unsigned fetch or: 7
+(13) long unsigned compare exchange success: 1
+(14) long unsigned before exchange: 5 7
+(14) long unsigned after exchange: 7 5
+P5 Consumer tries to lock Sig21
+P5 Consumer broadcasted Sig21
+P5 Consumer unlocked Sig21
+P5 Consumer waits for SCR1 post signal
+P3 got Sig21
+P3 unlocked Sig21
+
+P3 uses atomic variables
+ivar1 + ivar2 = -3 + 1 = -2
+P4 Consumer got Sig21
+P4 Consumer unlocked Sig21
+P4 Consumer waits for SCR1 post signal
+P6 got signal Sig21
+P6 unlocked Sig21
+
+P6 uses atomic variables
+ivar1 + ivar2 = -3 + 1 = -2
+uvar1 + uvar2 = 0 + 7 = 7
+lvar1 + lvar2 = 4 + 7 = 11
+uvar1 + uvar2 = 0 + 7 = 7
+lvar1 + lvar2 = 4 + 7 = 11
+luvar1 + luvar2 = 7 + 5 = 12
+
+P3 waits on Barrier bcr2
+luvar1 + luvar2 = 7 + 5 = 12
+
+P6 waits on Barrier bcr2
+P6 passed through Barrier bcr2
+
+P6 modifies atomic variables using numbered atomic ops
+(2) int add fetch: -2
+(8) int fetch sub: 1
+(4) long xor fetch: 3
+(5) long or fetch: 7
+(10) unsigned fetch xor: 0
+(11) unsigned fetch or: 7
+(13) long unsigned compare exchange success: 0
+(14) long unsigned before exchange: 7 7
+(14) long unsigned after exchange: 7 7
+P3 passed through Barrier bcr2
+
+P3 uses atomic variables
+ivar1 + ivar2 = -2 + 3 = 1
+uvar1 + uvar2 = 7 + 7 = 14
+lvar1 + lvar2 = 3 + 7 = 10
+luvar1 + luvar2 = 7 + 7 = 14
+
+P2 tries to lock Sig21
+P2 Consumer waits for Sig21
+P2 Consumer got Sig21
+P2 unlocked Sig21
+
+P2 uses atomic variables
+ivar1 + ivar2 = -2 + 3 = 1
+uvar1 + uvar2 = 7 + 7 = 14
+lvar1 + lvar2 = 3 + 7 = 10
+luvar1 + luvar2 = 7 + 7 = 14
+
+
+P2 modifies atomic variables using numbered atomic ops
+(2) int add fetch: 1
+(8) int fetch sub: 3
+(4) long xor fetch: 4
+(5) long or fetch: 7
+(10) unsigned fetch xor: 7
+(11) unsigned fetch or: 7
+(13) long unsigned compare exchange success: 1
+(14) long unsigned before exchange: 2 7
+(14) long unsigned after exchange: 7 2
+P2 Consumer waits for SCR1 post signal
+P1 Producer tries to lock MCR1
+P1 Producer successfully locked MCR1
+P1 Producer successfully added a new element number 0 to CR1 list
+P1 Producer sent SCR1 post signal
+P1 Producer unlocked MCR1
+P5 Consumer got SCR1 post signal
+P5 Consumer tries to lock MCR1
+P5 Consumer successfully locked MCR1
+P5 Consumer successfully took 8 from CR1 list
+Now there is 0 elements left in CR1 list
+P5 Consumer unlocked MCR1
+P6 tries to lock Sig21
+P6 waits for Sig21
+P3 tries to lock Sig21
+P3 waits for Sig21
+P1 Producer tries to lock MCR1
+P1 Producer successfully locked MCR1
+P1 Producer successfully added a new element number 0 to CR1 list
+P1 Producer sent SCR1 post signal
+P1 Producer unlocked MCR1
+
+P5 modifies atomic variables using numbered atomic ops
+(2) int add fetch: 3
+(8) int fetch sub: 2
+(4) long xor fetch: 3
+(5) long or fetch: 7
+(10) unsigned fetch xor: 0
+(11) unsigned fetch or: 7
+(13) long unsigned compare exchange success: 0
+(14) long unsigned before exchange: 7 7
+(14) long unsigned after exchange: 7 7
+P4 Consumer got SCR1 post signal
+P4 Consumer tries to lock MCR1
+P4 Consumer successfully locked MCR1
+P4 Consumer successfully took 9 from CR1 list
+Now there is 0 elements left in CR1 list
+P5 Consumer tries to lock Sig21
+P5 Consumer broadcasted Sig21
+P5 Consumer unlocked Sig21
+P4 Consumer unlocked MCR1
+P5 Consumer waits for SCR1 post signal
+P6 got signal Sig21
+P6 unlocked Sig21
+
+P6 uses atomic variables
+ivar1 + ivar2 = 3 + -1 = 2
+uvar1 + uvar2 = 7 + 7 = 14
+lvar1 + lvar2 = 3 + 7 = 10
+luvar1 + luvar2 = 7 + 7 = 14
+
+P6 waits on Barrier bcr2
+P3 got Sig21
+P3 unlocked Sig21
+
+P3 uses atomic variables
+ivar1 + ivar2 = 3 + -1 = 2
+uvar1 + uvar2 = 7 + 7 = 14
+lvar1 + lvar2 = 3 + 7 = 10
+luvar1 + luvar2 = 7 + 7 = 14
+
+P3 waits on Barrier bcr2
+P3 passed through Barrier bcr2
+
+P3 uses atomic variables
+ivar1 + ivar2 = 3 + -1 = 2
+uvar1 + uvar2 = 7 + 7 = 14
+lvar1 + lvar2 = 3 + 7 = 10
+luvar1 + luvar2 = 7 + 7 = 14
+
+P6 passed through Barrier bcr2
+
+P6 modifies atomic variables using numbered atomic ops
+(2) int add fetch: 2
+(8) int fetch sub: -1
+(4) long xor fetch: 4
+(5) long or fetch: 7
+(10) unsigned fetch xor: 7
+(11) unsigned fetch or: 7
+(13) long unsigned compare exchange success: 1
+(14) long unsigned before exchange: 6 7
+(14) long unsigned after exchange: 7 6
+P1 Producer tries to lock MCR1
+P1 Producer successfully locked MCR1
+P1 Producer successfully added a new element number 0 to CR1 list
+P1 Producer sent SCR1 post signal
+P1 Producer unlocked MCR1
+P5 Consumer got SCR1 post signal
+P5 Consumer tries to lock MCR1
+P5 Consumer successfully locked MCR1
+P5 Consumer successfully took 10 from CR1 list
+Now there is 0 elements left in CR1 list
+P5 Consumer unlocked MCR1
+P4 tries to lock Sig21
+P4 Consumer waits for Sig21 
+P4 Consumer got Sig21
+P4 Consumer unlocked Sig21
+P4 Consumer waits for SCR1 post signal
+P3 tries to lock Sig21
+P3 waits for Sig21
+P6 tries to lock Sig21
+P6 waits for Sig21
+P1 Producer tries to lock MCR1
+P1 Producer successfully locked MCR1
+
+P5 modifies atomic variables using numbered atomic ops
+(2) int add fetch: -1
+(8) int fetch sub: -3
+(4) long xor fetch: 3
+(5) long or fetch: 7
+(10) unsigned fetch xor: 0
+(11) unsigned fetch or: 7
+(13) long unsigned compare exchange success: 0
+P1 Producer successfully added a new element number 0 to CR1 list
+P1 Producer sent SCR1 post signal
+P1 Producer unlocked MCR1
+(14) long unsigned before exchange: 7 7
+(14) long unsigned after exchange: 7 7
+P5 Consumer tries to lock Sig21
+P2 Consumer got SCR1 post signal
+P2 Consumer tries to lock MCR1
+P2 Consumer successfully locked MCR1
+P2 Consumer successfully took 11 from CR1 list
+Now there is 0 elements left in CR1 list
+P2 Consumer unlocked MCR1
+P5 Consumer broadcasted Sig21
+P5 Consumer unlocked Sig21
+P5 Consumer waits for SCR1 post signal
+P6 got signal Sig21
+P6 unlocked Sig21
+
+P6 uses atomic variables
+ivar1 + ivar2 = -1 + -2 = -3
+uvar1 + uvar2 = 7 + 7 = 14
+lvar1 + lvar2 = 3 + 7 = 10
+luvar1 + luvar2 = 7 + 7 = 14
+
+P6 waits on Barrier bcr2
+P3 got Sig21
+P3 unlocked Sig21
+
+P3 uses atomic variables
+ivar1 + ivar2 = -1 + -2 = -3
+uvar1 + uvar2 = 7 + 7 = 14
+lvar1 + lvar2 = 3 + 7 = 10
+luvar1 + luvar2 = 7 + 7 = 14
+
+P3 waits on Barrier bcr2
+P3 passed through Barrier bcr2
+
+P3 uses atomic variables
+ivar1 + ivar2 = -1 + -2 = -3
+P6 passed through Barrier bcr2
+
+P6 modifies atomic variables using numbered atomic ops
+(2) int add fetch: -3
+(8) int fetch sub: -2
+(4) long xor fetch: 4
+(5) long or fetch: 7
+(10) unsigned fetch xor: 7
+(11) unsigned fetch or: 7
+uvar1 + uvar2 = 7 + 7 = 14
+lvar1 + lvar2 = 4 + 7 = 11
+luvar1 + luvar2 = 6 + 7 = 13
+
+(13) long unsigned compare exchange success: 1
+(14) long unsigned before exchange: 6 7
+(14) long unsigned after exchange: 7 6
+P2 tries to lock Sig21
+P2 Consumer waits for Sig21
+P2 Consumer got Sig21
+P2 unlocked Sig21
+
+P2 uses atomic variables
+ivar1 + ivar2 = -3 + 1 = -2
+uvar1 + uvar2 = 0 + 7 = 7
+lvar1 + lvar2 = 4 + 7 = 11
+luvar1 + luvar2 = 7 + 6 = 13
+
+
+P2 modifies atomic variables using numbered atomic ops
+(2) int add fetch: -2
+(8) int fetch sub: 1
+(4) long xor fetch: 3
+(5) long or fetch: 7
+(10) unsigned fetch xor: 0
+(11) unsigned fetch or: 7
+(13) long unsigned compare exchange success: 0
+(14) long unsigned before exchange: 7 7
+(14) long unsigned after exchange: 7 7
+P2 Consumer waits for SCR1 post signal
+P1 Producer tries to lock MCR1
+P1 Producer successfully locked MCR1
+P1 Producer successfully added a new element number 0 to CR1 list
+P1 Producer sent SCR1 post signal
+P1 Producer unlocked MCR1
+P4 Consumer got SCR1 post signal
+P4 Consumer tries to lock MCR1
+P4 Consumer successfully locked MCR1
+P4 Consumer successfully took 12 from CR1 list
+Now there is 0 elements left in CR1 list
+P4 Consumer unlocked MCR1
+P3 tries to lock Sig21
+P3 waits for Sig21
+P6 tries to lock Sig21
+P6 waits for Sig21
+P4 tries to lock Sig21
+P4 Consumer waits for Sig21 
+P4 Consumer got Sig21
+P4 Consumer unlocked Sig21
+P4 Consumer waits for SCR1 post signal
+P1 Producer tries to lock MCR1
+P1 Producer successfully locked MCR1
+P1 Producer successfully added a new element number 0 to CR1 list
+P1 Producer sent SCR1 post signal
+P2 Consumer got SCR1 post signal
+P2 Consumer tries to lock MCR1
+P2 Consumer successfully locked MCR1
+P1 Producer unlocked MCR1
+P2 Consumer successfully took 13 from CR1 list
+Now there is 0 elements left in CR1 list
+P2 Consumer unlocked MCR1
+P1 Producer tries to lock MCR1
+P1 Producer successfully locked MCR1
+P1 Producer successfully added a new element number 0 to CR1 list
+P1 Producer sent SCR1 post signal
+P1 Producer unlocked MCR1
+P4 Consumer got SCR1 post signal
+P4 Consumer tries to lock MCR1
+P4 Consumer successfully locked MCR1
+P2 tries to lock Sig21
+P2 Consumer waits for Sig21
+P4 Consumer successfully took 14 from CR1 list
+Now there is 0 elements left in CR1 list
+P4 Consumer unlocked MCR1
+^C
+
